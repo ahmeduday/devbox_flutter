@@ -10,11 +10,19 @@ environment:
   sdk: ^3.5.4
 
 dependencies:
+  code_text_field: ^1.1.0
+  easy_localization: ^3.0.7
+  file_picker: ^8.1.4
   flutter:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  get: ^4.6.6
+  material_symbols_icons: ^4.2799.0
+  multi_split_view: ^3.6.0
+  shared_preferences: ^2.3.3
   sidebarx: ^0.17.1
+  yaru: ^5.3.2
 
 dev_dependencies:
   flutter_test:
