@@ -1,5 +1,5 @@
 import 'package:code_text_field/code_text_field.dart';
-import 'package:devbox_flutter/src/settings/settings.dart';
+import 'package:devbox_flutter/features/settings/settings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

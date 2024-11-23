@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yaru/yaru.dart';
 
-class JsonToClassConverterController extends GetxController {
+class ClassJsonGeneratorController extends GetxController {
   final inputController = TextEditingController();
   final outputController = TextEditingController();
 
@@ -22,12 +22,12 @@ class JsonToClassConverterController extends GetxController {
   }
 }
 
-class JsonToClassConverterPage extends GetView<JsonToClassConverterController> {
-  const JsonToClassConverterPage({super.key});
+class ClassJsonGeneratorPage extends GetView<ClassJsonGeneratorController> {
+  const ClassJsonGeneratorPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(JsonToClassConverterController());
+    final controller = Get.put(ClassJsonGeneratorController());
 
     return SizedBox(
       height: MediaQuery.of(context).size.height - kToolbarHeight,

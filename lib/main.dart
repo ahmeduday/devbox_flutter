@@ -1,11 +1,11 @@
-import 'package:devbox_flutter/pages/tools_controller.dart';
+import 'package:devbox_flutter/features/tools/tools_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // import 'src/app_old.dart';
 import 'app.dart';
-import 'src/settings/settings_controller.dart';
-import 'src/settings/settings_service.dart';
+import 'features/settings/settings_controller.dart';
+import 'features/settings/settings_service.dart';
 
 void main() async {
   // Set up the SettingsController, which will glue user settings to multiple

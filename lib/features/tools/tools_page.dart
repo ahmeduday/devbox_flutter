@@ -1,7 +1,8 @@
-import 'package:devbox_flutter/pages/generators/generators_list.dart';
-import 'package:devbox_flutter/pages/tool.dart';
-import 'package:devbox_flutter/pages/tools_controller.dart';
-import 'package:devbox_flutter/pages/tools_group.dart';
+import 'package:devbox_flutter/features/generators/generators_helper.dart';
+import 'package:devbox_flutter/features/generators/generators_list.dart';
+import 'package:devbox_flutter/features/tools/tool.dart';
+import 'package:devbox_flutter/features/tools/tools_controller.dart';
+import 'package:devbox_flutter/features/tools/tools_group.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:material_symbols_icons/get.dart';
@@ -78,22 +79,29 @@ Widget toolList(ToolsGroup group, ToolsController controller) {
             toolList[index].icon,
             SymbolStyle
                 .outlined)), //Icon(IconData(toolList[index].icon, fontFamily: 'MaterialIcons')),
-        onTap: () => showDialog(
-          context: context,
-          builder: (context) => SimpleDialog(
-            titlePadding: EdgeInsets.zero,
-            contentPadding: const EdgeInsets.all(10),
-            title: YaruDialogTitleBar(
-              title: Text(toolList[index].name),
-            ),
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(toolList[index].description),
-              ),
-            ],
-          ),
-        ),
+        onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => _getPageByIndex(
+                    toolList[index].groupId, toolList[index].id))),
+        // onTap: () => Get.to(
+        //     () => _getPageByIndex(toolList[index].groupId, toolList[index].id)),
+        // showDialog(
+        //   context: context,
+        //   builder: (context) => SimpleDialog(
+        //     titlePadding: EdgeInsets.zero,
+        //     contentPadding: const EdgeInsets.all(10),
+        //     title: YaruDialogTitleBar(
+        //       title: Text(toolList[index].name),
+        //     ),
+        //     children: [
+        //       Padding(
+        //         padding: const EdgeInsets.all(8.0),
+        //         child: Text(toolList[index].description),
+        //       ),
+        //     ],
+        //   ),
+        // ),
         surfaceTintColor: index.isEven ? Colors.pink : null,
       );
     },
@@ -129,3 +137,14 @@ List<Tool> getToolListByGroup(ToolsGroup group) {
 //       return 'Not found page';
 //   }
 // }
+
+Widget _getPageByIndex(int groupId, int toolId) {
+  switch (groupId) {
+    case 0:
+      return getGeneratorPage(toolId);
+    default:
+      return const Center(
+        child: Text('Not found page'),
+      );
+  }
+}

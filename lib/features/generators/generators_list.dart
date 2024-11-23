@@ -1,4 +1,4 @@
-import 'package:devbox_flutter/pages/tool.dart';
+import 'package:devbox_flutter/features/tools/tool.dart';
 import 'package:material_symbols_icons/material_symbols_icons.dart';
 
 List<Tool> generators = [

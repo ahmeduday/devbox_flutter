@@ -1,5 +1,5 @@
-import 'package:devbox_flutter/pages/home_page.dart';
-import 'package:devbox_flutter/pages/tools_page.dart';
+import 'package:devbox_flutter/features/home_page.dart';
+import 'package:devbox_flutter/features/tools/tools_page.dart';
 import 'package:flutter/material.dart';
 import 'package:sidebarx/sidebarx.dart';
 
